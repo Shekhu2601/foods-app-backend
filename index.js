@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use(cors())
 const PORT =process.env.PORT
 app.use('/auth', AuthRouter);
-app.use('/auth', ProductRouter);
+app.use('/', ProductRouter);
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT} `)
 })
