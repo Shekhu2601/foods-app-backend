@@ -13,6 +13,25 @@ const corsConfig ={
 }
 dotenv.config();
 require("./Models/db")
+
+const url = `http://foods-app-backend-v44y.onrender.com/d
+`;
+const interval = 30000;
+
+function reloadWebsite() {
+  axios
+    .get(url)
+    .then((response) => {
+      console.log("website reloded");
+    })
+    .catch((error) => {
+      console.error(`Error : ${error.message}`);
+    });
+}
+
+setInterval(reloadWebsite, interval);
+
+
 app.get("/d",(req,res)=>{
     res.send("ram")
 })
